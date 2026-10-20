@@ -1,0 +1,35 @@
+name: Build SMAPI Mod
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Download Game Stubs
+      run: |
+        mkdir -p game
+        curl -sL -o "game/StardewValley.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewValley.dll"
+        curl -sL -o "game/StardewModdingAPI.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewModdingAPI.dll"
+        cp "game/StardewValley.dll" "game/Stardew Valley.dll"
+        ls -la game
+
+    - name: Build Mod
+      run: dotnet build -c Release
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: CustomMonsterHP-Mod
+        path: bin/Release/net6.0/
