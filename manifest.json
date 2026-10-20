@@ -1,0 +1,10 @@
+{
+  "Name": "Custom Monster HP",
+  "Author": "Dear",
+  "Version": "1.0.0",
+  "Description": "Mod for customizing monster HP via GMCM.",
+  "UniqueID": "Dear.CustomMonsterHP",
+  "EntryDll": "CustomMonsterHP.dll",
+  "MinimumApiVersion": "3.14.0",
+  "UpdateKeys": []
+}
