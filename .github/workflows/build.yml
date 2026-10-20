@@ -22,6 +22,7 @@ jobs:
         mkdir -p game
         curl -sL -o "game/StardewValley.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewValley.dll"
         curl -sL -o "game/StardewModdingAPI.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewModdingAPI.dll"
+        cp "game/StardewValley.dll" "game/Stardew Valley.dll"
 
     - name: Build Mod
       run: dotnet build -c Release
