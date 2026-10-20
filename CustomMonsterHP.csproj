@@ -2,7 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <GamePath>$(MSBuildThisFileDirectory)game</GamePath>
+    <EnableHarmonizeCode>false</EnableHarmonizeCode>
+    <ModZipPath>$(MSBuildDataPath)</ModZipPath>
   </PropertyGroup>
 
   <ItemGroup>
