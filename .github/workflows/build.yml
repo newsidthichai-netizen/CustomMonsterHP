@@ -17,12 +17,6 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
-    - name: Download Reference Stubs
-      run: |
-        mkdir -p game
-        curl -sL -o "game/Stardew Valley.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewValley.dll"
-        curl -sL -o "game/StardewModdingAPI.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewModdingAPI.dll"
-
     - name: Build Mod
       run: dotnet build -c Release
 
