@@ -2,12 +2,10 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <EnableHarmonizeCode>false</EnableHarmonizeCode>
-    <ModZipPath>$(MSBuildDataPath)</ModZipPath>
+    <GamePath>$(MSBuildThisFileDirectory)game</GamePath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
   </ItemGroup>
 </Project>
-
