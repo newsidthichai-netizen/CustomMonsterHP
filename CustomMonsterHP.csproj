@@ -2,21 +2,10 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <GamePath>$(MSBuildThisFileDirectory)game</GamePath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Stardew Valley">
-      <HintPath>game/Stardew Valley.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="StardewModdingAPI">
-      <HintPath>game/StardewModdingAPI.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <PackageReference Include="StardewModdingAPI" Version="4.0.0" />
+    <PackageReference Include="Kk.Stardew.StardewValley.Redist" Version="1.6.0" />
   </ItemGroup>
 </Project>
