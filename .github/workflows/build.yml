@@ -17,8 +17,14 @@ jobs:
       with:
         dotnet-version: 6.0.x
 
+    - name: Download Game Stubs
+      run: |
+        mkdir -p game
+        curl -sL -o "game/StardewValley.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewValley.dll"
+        curl -sL -o "game/StardewModdingAPI.dll" "https://raw.githubusercontent.com/Pathoschild/StardewModdingAPI/develop/src/SMAPI.Toolkit/Framework/ModStubs/StardewModdingAPI.dll"
+
     - name: Build Mod
-      run: dotnet build -c Release /p:GamePath="/tmp"
+      run: dotnet build -c Release
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
